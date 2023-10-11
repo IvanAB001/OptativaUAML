@@ -1,0 +1,16 @@
+//Ivan Alva Bustamante
+osc(60, -0.015, 0.3)
+	.diff(osc(80, 0.08)
+		.rotate(Math.PI / 3.295))
+	.modulateScale(noise(1.5, 0.15)
+		.modulateScale(osc(11)
+			.rotate(() => Math.sin(time / 2))), 0.6)
+	.color(40, 0.5, 1)
+	.contrast(0.4)
+	.add(src(o0)
+		.modulate(o0, .04), .6)
+	.invert()
+	.brightness(0.1)
+	.contrast(1.2)
+	.modulateScale(osc(2), -0.2)
+	.out();
